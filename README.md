@@ -27,3 +27,6 @@ The build is minified and the filenames include the hashes.\
 This app is ready to be deployed!
 
 
+### Summary of Query Methods
+
+<img width="616" alt="Screen Shot 2022-11-15 at 7 25 25 PM" src="https://user-images.githubusercontent.com/7660220/202076479-a3048101-dc7a-4f6c-9cf2-9f953ef013cc.png">
