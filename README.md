@@ -30,3 +30,36 @@ This app is ready to be deployed!
 ### Summary of Query Methods
 
 <img width="616" alt="Screen Shot 2022-11-15 at 7 25 25 PM" src="https://user-images.githubusercontent.com/7660220/202076479-a3048101-dc7a-4f6c-9cf2-9f953ef013cc.png">
+
+
+## Note
+
+> Render a component including `<Link>` element:
+
+If we are using the `<Link>` element in our component to route to another page, we should not use it outside a `<Router>`. Because the component is wrapped with `<BrowserRouter>`. In the unit test, in order to render the component, we need to wrap the component with `<BrowserRouter>`. Therefore, we need to have a mock component like:
+
+```tsx
+import { render, screen } from '@testing-library/react';
+import TodoFooter from "../TodoFooter"
+import { BrowserRouter } from "react-router-dom"
+
+const MockTodoFooter = ({ numberOfIncompleteTasks }) => {
+    return (
+        <BrowserRouter>
+          <TodoFooter 
+            numberOfIncompleteTasks={numberOfIncompleteTasks}
+          />
+        </BrowserRouter>
+    )
+}
+
+it('should render the correct amount of incomplete tasks', () => {
+    render(
+        <MockTodoFooter 
+          numberOfIncompleteTasks={5}
+        />
+    );
+    const pElement = screen.getByText(/5 tasks left/i);
+    expect(pElement).toBeInTheDocument();
+});
+```
