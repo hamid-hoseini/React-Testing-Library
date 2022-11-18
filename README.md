@@ -36,7 +36,7 @@ This app is ready to be deployed!
 
 > Render a component including `<Link>` element:
 
-If we are using the `<Link>` element in our component to route to another page, we should not use it outside a `<Router>`. Because the component is wrapped with `<BrowserRouter>`. In the unit test, in order to render the component, we need to wrap the component with `<BrowserRouter>`. Therefore, we need to have a mock component like:
+If we are using the `<Link>` element in our component to route to another page, we should not use it outside a `<Router>`. Because the component is wrapped with `<BrowserRouter>`. In the unit test, in order to render the component, we need to wrap the component with `<BrowserRouter>`. Therefore, we need to have a mock component like ```MockTodoFooter``` in below example:
 
 ```tsx
 import { render, screen } from '@testing-library/react';
