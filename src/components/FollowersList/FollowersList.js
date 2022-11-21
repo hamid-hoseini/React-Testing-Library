@@ -9,12 +9,12 @@ export default function FollowersList() {
 
     useEffect(() => {
 
-        const fetchFollowers = async () => {
-            const { data } = await axios.get("https://randomuser.me/api/?results=5")
-            setFollowers(data.results)
-        }
+      const fetchFollowers = async () => {
+        const { data } = await axios.get("https://randomuser.me/api/?results=5")
+        setFollowers(data.results)
+      }
 
-        fetchFollowers()
+      fetchFollowers()
     }, []);
 
 
